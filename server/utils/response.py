@@ -13,9 +13,7 @@ def error_response(message="Something went wrong", status_code=400, error_detail
     response = {
         "status": "error",
         "message": message,
-        "error": {
-            "details": error_details or "An unexpected error occurred."
-        },
+        "error": error_details or "An unexpected error occurred.",
         "meta": meta or {}
     }
     return jsonify(response), status_code
